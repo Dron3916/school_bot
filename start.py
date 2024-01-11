@@ -17,7 +17,7 @@ while True:
 
     if check_internet_connection():
         print("Интернет-соединение доступно.")
-        process = subprocess.Popen(['python', 'main.py'])
+        process = subprocess.Popen(['python3', 'main.py'])
         kolvo_start += 1
         print(f"\n\nЗапуск №{kolvo_start}\nВремя запуска: {datetime.datetime.now().strftime('%d.%m.%y %H:%M:%S')}")
         with open("log.txt", 'a') as f:
