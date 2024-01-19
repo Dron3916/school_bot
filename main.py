@@ -49,7 +49,7 @@ for file in existing_files:
 logging.basicConfig(level=logging.INFO)
 
 # Инициализируем бота и диспетчер
-bot = Bot(token='6741255301:AAHLGXx3twvgKNGshv3UE2rZ7m41UF65wOs')
+bot = Bot(token='1234567890')
 dp = Dispatcher(bot)
 
 
