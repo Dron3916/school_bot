@@ -23,7 +23,7 @@ while True:
         with open("log.txt", 'a') as f:
             f.write(
                 f"\n\nЗапуск №{kolvo_start}\nВремя запуска: {datetime.datetime.now().strftime('%d.%m.%y %H:%M:%S')}")
-        time.sleep(300)
+        time.sleep(18000)
         process.terminate()
         kolvo_stop += 1
         with open("log.txt", 'a') as f:
@@ -38,4 +38,4 @@ while True:
         kolvo_stop += 1
         with open("log.txt", 'a') as f:
             f.write(
-                f"\n\nОстановка №{kolvo_stop}\nВремя остановки: {datetime.datetime.now().strftime('%d.%m.%y %H:%M:%S')}")
+                f"\n\nОстановка (INTERNET NOT AVAILABLE)№{kolvo_stop}\nВремя остановки: {datetime.datetime.now().strftime('%d.%m.%y %H:%M:%S')}")
