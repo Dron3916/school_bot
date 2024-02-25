@@ -4,8 +4,6 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.utils import executor
 import asyncio
 
-
-
 import os
 import requests
 
@@ -44,7 +42,7 @@ for file in missing_files:
 # Вывод сообщения о файлах, которые уже существуют
 for file in existing_files:
     print(f"Файл {file} уже существует и его не нужно загружать.")
-    
+
 # Устанавливаем уровень логирования
 logging.basicConfig(level=logging.INFO)
 
@@ -65,31 +63,10 @@ async def start(message: types.Message):
     item5 = types.KeyboardButton('Кадры')
     item6 = types.KeyboardButton('Завхоз')
 
-
-
-
     markup.add(item1, item2, item3, item4, item5, item6)
 
-    current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-
-
-    await bot.send_message("1335412821", f"новый чел {current_time}")
     await bot.send_message(message.chat.id, f'Здравствуйте, {message.from_user.first_name}.', reply_markup=markup)
 
-# РЕакт на текст сообщения
-@dp.message_handler(commands='admin_menu')
-async def admin_menu(message: types.Message):
-
-    current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-
-    await message.reply("Админ меню:" + f"\nТекущее время: {current_time}")
-    # РЕакт на текст сообщения
-    with open("log.txt", 'r') as f:
-        log_for_admin = f.read()
-
-    await message.answer(log_for_admin)
 
 
 # РЕакт на текст сообщения
@@ -208,7 +185,7 @@ async def bot_message(message: types.Message):
         elif message.text == 'заявка на техническое обслуживание':
 
             await bot.send_message(message.chat.id,
-                             r'https://docs.google.com/forms/d/e/1FAIpQLSfKIzjncmCee-QZmN7nvG-xnD1ReCVNPchpB54GNLwwCRNvaw/viewform?hl=ru')
+                                   r'https://docs.google.com/forms/d/e/1FAIpQLSfKIzjncmCee-QZmN7nvG-xnD1ReCVNPchpB54GNLwwCRNvaw/viewform?hl=ru')
 
         elif message.text == 'Часто задаваемые вопросы':
             file = open(
@@ -218,12 +195,12 @@ async def bot_message(message: types.Message):
 
         elif message.text == 'Кадры школы':
             await bot.send_message(message.chat.id,
-                             r'https://docs.google.com/forms/d/e/1FAIpQLSefZrf2FHtLejSxkRagASg2u2XFnotu73-9kiMCbGUcQwaSLg/viewform?vc=0&c=0&w=1&flr=0')
+                                   r'https://docs.google.com/forms/d/e/1FAIpQLSefZrf2FHtLejSxkRagASg2u2XFnotu73-9kiMCbGUcQwaSLg/viewform?vc=0&c=0&w=1&flr=0')
 
 
         elif message.text == 'Завхоз':
             await bot.send_message(message.chat.id,
-                             r'https://docs.google.com/forms/d/e/1FAIpQLSfKhq8BTWiEDXeeWYqSVTygy_yuL2c4B6VIc6yeHmx5r0eyRA/viewform?vc=0&c=0&w=1&flr=0')
+                                   r'https://docs.google.com/forms/d/e/1FAIpQLSfKhq8BTWiEDXeeWYqSVTygy_yuL2c4B6VIc6yeHmx5r0eyRA/viewform?vc=0&c=0&w=1&flr=0')
             await bot.send_message(message.chat.id, 'Заявка на ремонт')
 
         elif message.text == 'Формы заявлений':
@@ -232,15 +209,15 @@ async def bot_message(message: types.Message):
 
         elif message.text == 'Посещаемость':
             await bot.send_message(message.chat.id,
-                             r'https://docs.google.com/forms/d/1KIrCDesvmBDKlLoZcSsdnSvsnBFH58ZdjjropBD0ksg/viewform?edit_requested=true')
+                                   r'https://docs.google.com/forms/d/1KIrCDesvmBDKlLoZcSsdnSvsnBFH58ZdjjropBD0ksg/viewform?edit_requested=true')
 
         elif message.text == 'Заказ питания':
             await bot.send_message(message.chat.id,
-                             r'https://docs.google.com/forms/d/e/1FAIpQLSf8yXf9hUTOKKoo32euqsdFN-0wURujilzDovH0CZ3nsMcdfw/viewform?vc=0&c=0&w=1&flr=0')
+                                   r'https://docs.google.com/forms/d/e/1FAIpQLSf8yXf9hUTOKKoo32euqsdFN-0wURujilzDovH0CZ3nsMcdfw/viewform?vc=0&c=0&w=1&flr=0')
 
         elif message.text == 'Фактическое питание':
             await bot.send_message(message.chat.id,
-                             r'https://docs.google.com/forms/d/e/1FAIpQLSf1XHntDAwR5_z6u-XgJMtxfsFsZuqaRguqtKCKzzIAqtFBDQ/viewform?vc=0&c=0&w=1&flr=0')
+                                   r'https://docs.google.com/forms/d/e/1FAIpQLSf1XHntDAwR5_z6u-XgJMtxfsFsZuqaRguqtKCKzzIAqtFBDQ/viewform?vc=0&c=0&w=1&flr=0')
 
 
         elif message.text == 'Обращение к администрации ЭЖД':
@@ -260,12 +237,12 @@ async def bot_message(message: types.Message):
 
         elif message.text == 'График каникул':
             await bot.send_message(message.chat.id,
-                             r"https://st.educom.ru/eduoffices/gateways/get_file.php?id=%7BEC27D7CB-B115-B729-8704-9AABFB488527%7D&name=kalend_2023224.pdf")
+                                   r"https://st.educom.ru/eduoffices/gateways/get_file.php?id=%7BEC27D7CB-B115-B729-8704-9AABFB488527%7D&name=kalend_2023224.pdf")
 
 
         elif message.text == 'ОГЭ':
             await bot.send_message(message.chat.id,
-                             r"https://docs.google.com/spreadsheets/d/1WoYRWIOUKsDMIds2rjI2tR5GSmZxpyd0-6h0QFZXX2k/edit?usp=sharing")
+                                   r"https://docs.google.com/spreadsheets/d/1WoYRWIOUKsDMIds2rjI2tR5GSmZxpyd0-6h0QFZXX2k/edit?usp=sharing")
 
 
         elif message.text == 'Расписание тематических пятниц':
@@ -328,13 +305,9 @@ async def bot_message(message: types.Message):
 
         elif message.text == 'ЕГЭ':
             await bot.send_message(message.chat.id,
-                             r"https://fipi.ru/ege/otkrytyy-bank-zadaniy-ege?ysclid=lptxw1zc1p984380303")
+                                   r"https://fipi.ru/ege/otkrytyy-bank-zadaniy-ege?ysclid=lptxw1zc1p984380303")
 
 
 if __name__ == "__main__":
     executor.start_polling(dp, skip_updates=True)
     input()
-
-
-
-
