@@ -9,8 +9,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 # Ваше имя пользователя и пароль для учетной записи Google
-username = 'andrew3456425@gmail.com'
-password = 'ydxq mwqh qddn pzqp'
+username = '#####'
+password = '#####'
 
 
 while True:
